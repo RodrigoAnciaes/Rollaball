@@ -10,6 +10,7 @@ public class PlayerControler : MonoBehaviour
      public float speed = 0; 
      public TextMeshProUGUI countText;
      public TextMeshProUGUI livesText;
+     public TextMeshProUGUI timerText; // Added timer text
      public GameObject winTextObject;
      public GameObject loseTextObject;
 
@@ -18,6 +19,9 @@ public class PlayerControler : MonoBehaviour
      private float movementY;
      private int count;
      public int lives;
+     private float timer = 20; // Timer set to 60 seconds
+     private bool gameOver;
+     private bool won;
 
      // Start is called before the first frame update
      void Start()
@@ -28,6 +32,8 @@ public class PlayerControler : MonoBehaviour
           SetCountText();
           winTextObject.SetActive(false);
           loseTextObject.SetActive(false);
+          gameOver = false;
+          won = false;
      }
 
      void OnMove(InputValue movementValue)
@@ -41,9 +47,11 @@ public class PlayerControler : MonoBehaviour
      {
           countText.text = "Score: " + count.ToString();
           livesText.text = "Lives: " + lives.ToString(); // Display the number of lives
+          timerText.text = "Time: " + timer.ToString("F0"); // Display the timer F0 rounds to the nearest whole number
           if (count >= 12)
           {
                winTextObject.SetActive(true);
+               won = true;
           }
      }
 
@@ -59,7 +67,7 @@ public class PlayerControler : MonoBehaviour
           if (other.gameObject.CompareTag("Pickup")) 
           {
                other.gameObject.SetActive(false);
-               if (lives <= 0)
+               if (gameOver)
                {
                     return;
                }
@@ -70,7 +78,7 @@ public class PlayerControler : MonoBehaviour
 
      public void TakeDamage(int damageAmount)
      {
-          if (lives <= 0)
+          if (gameOver || won)
           {
                return;
           }
@@ -79,6 +87,7 @@ public class PlayerControler : MonoBehaviour
           if (lives <= 0)
           {
                loseTextObject.SetActive(true);
+               gameOver = true;
           }
      }
 
@@ -89,6 +98,18 @@ public class PlayerControler : MonoBehaviour
           if (Keyboard.current.rKey.wasPressedThisFrame)
           {
                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+          }
+
+          // Update the timer
+          if (timer > 0 && gameOver == false && won == false)
+          {
+               timer -= Time.deltaTime;
+               SetCountText();
+               if (timer <= 0 && won == false)
+               {
+                    loseTextObject.SetActive(true);
+                    gameOver = true;
+               }
           }
      }
 }
