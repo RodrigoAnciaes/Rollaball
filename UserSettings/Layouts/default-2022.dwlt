@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 96
+  controlID: 98
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -615,14 +615,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 409.5617, y: 228.34477, z: 0}
+    m_Target: {x: 440.2, y: 192.6, z: 0}
     speed: 2
-    m_Value: {x: 409.5617, y: 228.34477, z: 0}
+    m_Value: {x: 440.2, y: 192.6, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -672,9 +672,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 303.1923
+    m_Target: 228.68658
     speed: 2
-    m_Value: 303.1923
+    m_Value: 228.68658
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -692,8 +692,8 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.23738132, y: -0.14391755, z: 0.03558539, w: 0.96003956}
-  m_LastSceneViewOrtho: 0
+  m_LastSceneViewRotation: {x: 0.14340994, y: 0.035619713, z: -0.00516499, w: 0.98900914}
+  m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
@@ -739,7 +739,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9275ffff907bffff447cffff187fffff3e7fffff1efbffffda9d00000c9e0000
+      m_ExpandedIDs: 66ebffffeef0ffffa0f1ffff74f4ffff9cf4ffff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -908,7 +908,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Images
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -916,16 +916,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Images
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rodri\Documents\Rodrigo\UnityProjects\Rollaball
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b4a00000
-    m_LastClickedID: 41140
-    m_ExpandedIDs: 00000000886e000000ca9a3bffffff7f
+    m_SelectedIDs: ae6e0000
+    m_LastClickedID: 28334
+    m_ExpandedIDs: 00000000966e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -953,7 +953,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000886e0000
+    m_ExpandedIDs: 00000000966e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
