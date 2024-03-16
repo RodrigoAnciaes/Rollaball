@@ -22,6 +22,12 @@ public class PlayerControler : MonoBehaviour
      private float timer = 20; // Timer set to 60 seconds
      private bool gameOver;
      private bool won;
+     // damage sound
+     public AudioClip damageSound;
+     public AudioClip collectSound;
+     public AudioClip winSound;
+     public AudioSource source;
+
 
      // Start is called before the first frame update
      void Start()
@@ -51,6 +57,7 @@ public class PlayerControler : MonoBehaviour
           if (count >= 12)
           {
                winTextObject.SetActive(true);
+               source.PlayOneShot(winSound);
                won = true;
           }
      }
@@ -67,6 +74,7 @@ public class PlayerControler : MonoBehaviour
           if (other.gameObject.CompareTag("Pickup")) 
           {
                other.gameObject.SetActive(false);
+               source.PlayOneShot(collectSound);
                if (gameOver)
                {
                     return;
@@ -84,6 +92,7 @@ public class PlayerControler : MonoBehaviour
           }
           lives -= damageAmount;
           SetCountText();
+          source.PlayOneShot(damageSound);
           if (lives <= 0)
           {
                loseTextObject.SetActive(true);
